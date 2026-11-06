@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "narutoto_allbijuu:block/bijuu_altar"
+  }
+}

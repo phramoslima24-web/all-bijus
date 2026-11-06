@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "narutoto_allbijuu:item/bijuu_journal"
+  }
+}

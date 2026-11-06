@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="narutoto_allbijuu"
+version="2.0.0"
+displayName="Narutoto: All Bijuu"
+description='''
+Addon do Narutoto: oito Bijuu (Shukaku ao Gyuki), Jinchuuriki, transformacoes, Bijuu Dama, extracao/selamento e missoes.
+'''
+
+[[dependencies.narutoto_allbijuu]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.narutoto_allbijuu]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.narutoto_allbijuu]]
+    modId="narutoto"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
