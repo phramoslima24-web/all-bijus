@@ -7,7 +7,7 @@ Jinchuuriki, transformações em 6 estágios, Bijuu Dama, extração/selamento, 
 1. Crie um repositório e envie **todo o conteúdo** desta pasta (arraste os arquivos para "Add file > Upload files").
 2. Pastas ocultas (`.github`) às vezes não sobem pelo upload: crie `.github/workflows/build.yml` em "Add file > Create new file"
    (digite o caminho com as barras) e cole o conteúdo do `build.yml` fornecido.
-3. Aba **Actions** > "Build narutoto-allbijuu" > execute. Ao terminar, baixe o artefato `narutoto-allbijuu-2.0.0`
+3. Aba **Actions** > "Build narutoto-allbijuu" > execute. Ao terminar, baixe o artefato `narutoto-allbijuu-2.1.0`
    (o `.jar` fica dentro). Se der erro, copie o log da etapa **Build** e me envie.
 4. Coloque o `.jar` em `mods/` junto com o `narutoto-0_4_1-forge.jar`.
 
@@ -27,6 +27,11 @@ Jinchuuriki, transformações em 6 estágios, Bijuu Dama, extração/selamento, 
 - Sem camada de aura/skin no jogador: a transformação usa partículas e atributos.
 - 2.0.0: modelos individuais (ver abaixo). Os oito arquivos `.bbmodel` enviados separadamente já estão copiados, sem alteração, para `src/main/resources/assets/narutoto_allbijuu/models/entity/`. O renderizador do cliente carrega geometria, UV e animações diretamente desses arquivos e usa as texturas PNG correspondentes. A compilação ainda precisa ser executada no GitHub e o resultado precisa ser testado dentro do Minecraft; não é possível garantir a aparência final sem esse teste.
 - Não analisei os outros nove addons (não foram enviados), então não há integração específica com eles.
+
+## Versão 2.1.0 – interface e HUD revisados
+- Tela de status reorganizada com painel, hierarquia visual e barra de chakra.
+- HUD com barra de chakra limitada corretamente entre 0% e 100%, fundo e contorno para melhor leitura.
+- Layout da tela de status adaptado à largura e altura disponíveis.
 
 ## Versão 2.0.0 – modelos individuais dos oito Bijuu
 Cada Bijuu tem seu próprio arquivo Blockbench, textura e textura emissiva (brilho), todos em
