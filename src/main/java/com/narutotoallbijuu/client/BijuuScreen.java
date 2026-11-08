@@ -123,6 +123,6 @@ public class BijuuScreen extends Screen {
         if (filled > 0) {
             g.fill(x, y, x + filled, y + height, color);
         }
-        g.fill(x, y, x + width, y + 1, 0x558FFFFFFF);
+        g.fill(x, y, x + width, y + 1, 0x558FFFFF);
     }
 }
