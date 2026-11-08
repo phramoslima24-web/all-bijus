@@ -7,7 +7,7 @@ Jinchuuriki, transformações em 6 estágios, Bijuu Dama, extração/selamento, 
 1. Crie um repositório e envie **todo o conteúdo** desta pasta (arraste os arquivos para "Add file > Upload files").
 2. Pastas ocultas (`.github`) às vezes não sobem pelo upload: crie `.github/workflows/build.yml` em "Add file > Create new file"
    (digite o caminho com as barras) e cole o conteúdo do `build.yml` fornecido.
-3. Aba **Actions** > "Build narutoto-allbijuu" > execute. Ao terminar, baixe o artefato `narutoto-allbijuu-2.1.0`
+3. Aba **Actions** > "Build narutoto-allbijuu" > execute. Ao terminar, baixe o artefato `narutoto-allbijuu-2.2.0`
    (o `.jar` fica dentro). Se der erro, copie o log da etapa **Build** e me envie.
 4. Coloque o `.jar` em `mods/` junto com o `narutoto-0_4_1-forge.jar`.
 
@@ -27,6 +27,18 @@ Jinchuuriki, transformações em 6 estágios, Bijuu Dama, extração/selamento, 
 - Sem camada de aura/skin no jogador: a transformação usa partículas e atributos.
 - 2.0.0: modelos individuais (ver abaixo). Os oito arquivos `.bbmodel` enviados separadamente já estão copiados, sem alteração, para `src/main/resources/assets/narutoto_allbijuu/models/entity/`. O renderizador do cliente carrega geometria, UV e animações diretamente desses arquivos e usa as texturas PNG correspondentes. A compilação ainda precisa ser executada no GitHub e o resultado precisa ser testado dentro do Minecraft; não é possível garantir a aparência final sem esse teste.
 - Não analisei os outros nove addons (não foram enviados), então não há integração específica com eles.
+
+## Versão 2.2.0 – mantos Jinchuuriki 3D e sincronização visual
+
+- Adicionada uma camada 3D de transformação sobre o jogador, com corpo de chakra, braços, pernas e caudas segmentadas.
+- A quantidade de caudas visíveis evolui com o estágio de transformação; as caudas têm movimento procedural independente.
+- Silhuetas especiais: carapaça do Isobu, chifres de Kokuo/Gyuki/Shukaku e asas animadas do Chomei.
+- O manto usa a cor e a identidade visual de cada Bijuu e fica sobre o skin/armadura sem substituir o jogador.
+- Estado de transformação sincronizado para os jogadores que estão acompanhando o hospedeiro, para que outros também vejam o manto.
+- Efeitos de partículas mais fortes ao subir ou desligar um estágio.
+- Os oito modelos 3D de criaturas em Blockbench continuam sendo carregados diretamente dos arquivos `.bbmodel`.
+
+**Nota:** a camada nova é geometria 3D articulada em cubos do Minecraft (não uma imagem 2D). A aparência final, a escala e a posição precisam ser conferidas dentro do Minecraft com o skin e armaduras usados no servidor.
 
 ## Versão 2.1.0 – interface e HUD revisados
 - Tela de status reorganizada com painel, hierarquia visual e barra de chakra.

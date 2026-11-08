@@ -70,6 +70,9 @@ public final class Transform {
                     d.rampageTicks = 0;
                     CHARGING.remove(p.getUUID());
                     d.dirty = true;
+                    ServerLevel level = (ServerLevel) p.level();
+                    AbilityUtil.particles(level, AbilityUtil.dust(b.color, 1.8f),
+                            p.position().add(0, 1.0, 0), 36, 1.0, 1.2, 1.0, 0.025);
                     Msg.bar(p, "off");
                 }
             }
@@ -107,6 +110,11 @@ public final class Transform {
         d.rampageTicks = 0;
         d.dirty = true;
         p.level().playSound(null, p.blockPosition(), SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1.0f, 0.6f + 0.1f * d.stage);
+        AbilityUtil.particles((ServerLevel) p.level(), AbilityUtil.dust(b.color, 1.5f + d.stage * 0.2f),
+                p.position().add(0, 1.0, 0), 24 + d.stage * 8, 0.8 + d.stage * 0.12,
+                1.0 + d.stage * 0.1, 0.8 + d.stage * 0.12, 0.025);
+        AbilityUtil.particles((ServerLevel) p.level(), AbilityUtil.dust(b.accent, 1.1f),
+                p.position().add(0, 1.0, 0), 12 + d.stage * 4, 0.55, 0.8, 0.55, 0.018);
         Msg.bar(p, "up", d.stage);
     }
 

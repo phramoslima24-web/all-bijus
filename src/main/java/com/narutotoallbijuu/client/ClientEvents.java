@@ -6,6 +6,7 @@ import com.narutotoallbijuu.logic.Transform;
 import com.narutotoallbijuu.net.ModNet;
 import com.narutotoallbijuu.registry.ModEntities;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraftforge.api.distmarker.Dist;
@@ -62,6 +63,22 @@ public final class ClientEvents {
         }
 
         @SubscribeEvent
+        public static void addPlayerLayers(EntityRenderersEvent.AddLayers e) {
+            for (String skin : e.getSkins()) {
+                PlayerRenderer renderer = e.getSkin(skin);
+                if (renderer != null) {
+                    renderer.addLayer(new BijuuTransformationLayer(renderer,
+                            e.getContext().bakeLayer(BijuuTransformationModel.LAYER)));
+                }
+            }
+        }
+
+        @SubscribeEvent
+        public static void transformationLayer(EntityRenderersEvent.RegisterLayerDefinitions e) {
+            e.registerLayerDefinition(BijuuTransformationModel.LAYER, BijuuTransformationModel::createLayer);
+        }
+
+        @SubscribeEvent
         public static void overlay(RegisterGuiOverlaysEvent e) {
             e.registerAboveAll("allbijuu_hud", Hud.OVERLAY);
         }
@@ -82,6 +99,7 @@ public final class ClientEvents {
             Minecraft mc = Minecraft.getInstance();
             if (mc.player == null) {
                 damaWas = false;
+                ClientHooks.clear();
                 return;
             }
             if (mc.screen != null) {

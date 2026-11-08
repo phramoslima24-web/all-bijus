@@ -54,7 +54,20 @@ public final class ForgeEvents {
     public static void login(PlayerEvent.PlayerLoggedInEvent e) {
         if (e.getEntity() instanceof ServerPlayer sp) {
             SealingManager.reconcile(sp);
+            ModNet.sync(sp);
         }
+    }
+
+    @SubscribeEvent
+    public static void startTracking(PlayerEvent.StartTracking e) {
+        if (e.getEntity() instanceof ServerPlayer watcher && e.getTarget() instanceof ServerPlayer subject) {
+            ModNet.syncTo(watcher, subject);
+        }
+    }
+
+    @SubscribeEvent
+    public static void logout(PlayerEvent.PlayerLoggedOutEvent e) {
+        // O cliente limpa o cache naturalmente ao desconectar; nenhum dado persistente é guardado aqui.
     }
 
     @SubscribeEvent
