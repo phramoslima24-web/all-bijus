@@ -1,5 +1,6 @@
 package com.narutotoallbijuu.client;
 
+import net.minecraft.client.model.geom.PartPose;
 import com.narutotoallbijuu.bijuu.Bijuu;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.PlayerModel;
