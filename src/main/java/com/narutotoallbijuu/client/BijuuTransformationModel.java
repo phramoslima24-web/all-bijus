@@ -14,7 +14,8 @@ import net.minecraft.util.Mth;
  * Camada 3D de chakra do hospedeiro. A geometria é montada como cubos articulados
  * (ossos independentes), permitindo caudas e detalhes com movimento real no jogo.
  */
-public final class BijuuTransformationModel extends EntityModel<AbstractClientPlayer> {\n    public static final ModelLayerLocation LAYER = new ModelLayerLocation(new ResourceLocation("narutoto_allbijuu", "jinchuuriki_mantle"), "main");
+public final class BijuuTransformationModel extends EntityModel<AbstractClientPlayer> {
+    public static final ModelLayerLocation LAYER = new ModelLayerLocation(new ResourceLocation("narutoto_allbijuu", "jinchuuriki_mantle"), "main");
     private final ModelPart root;
     private final ModelPart body, head, leftArm, rightArm, leftLeg, rightLeg;
     private final ModelPart[] tails = new ModelPart[8];
